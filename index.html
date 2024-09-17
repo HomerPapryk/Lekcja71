@@ -1,14 +1,32 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Test Skryptów</title>
+    <title>Test Script Loading</title>
   </head>
   <body>
-    <h1>Testowanie różnych atrybutów dla skryptów</h1>
+    <h1>Testing Different Script Attributes</h1>
+
+    <!-- 
+      Normal script loading: 
+      Skrypt jest pobierany i wykonywany natychmiast, gdy parser HTML napotka go w dokumencie. 
+      Wstrzymuje to parsowanie dokumentu do momentu załadowania i wykonania skryptu.
+    -->
     <script src="js/index.js"></script>
+
+    <!-- 
+      Asynchronous script loading (async): 
+      Skrypt jest pobierany równolegle z parsowaniem strony, ale zostaje wykonany natychmiast po pobraniu. 
+      Może to przerwać dalsze parsowanie strony. Nie gwarantuje zachowania kolejności względem innych skryptów.
+    -->
     <script src="js/index-async.js" async></script>
+
+    <!-- 
+      Deferred script loading (defer): 
+      Skrypt jest pobierany równolegle z parsowaniem strony, ale wykonuje się dopiero po zakończeniu parsowania całego dokumentu HTML. 
+      Skrypty z atrybutem defer są wykonywane w kolejności, w jakiej zostały zadeklarowane.
+    -->
     <script src="js/index-defer.js" defer></script>
   </body>
 </html>
